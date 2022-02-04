@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Boards</h1>
+
+<table style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boards.each_with_index do |board, index| %>
+      <tr>
+        <td style="border-bottom: 1px solid">
+          <h2><%= index + 1 %> .</h2>
+        </td>
+        <td style="border-bottom: 1px solid">
+          <%= link_to(board) do %>
+          <%= board.title %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Board', new_board_path %>
