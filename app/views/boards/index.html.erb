@@ -2,6 +2,14 @@
 
 <h1>Boards</h1>
 
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  <a href="<%= destroy_user_session_path %>" data-method="delete">logout</a>
+<% else %>
+  <a href="<%= new_user_session_path %>">login</a>
+<% end %>
+
+
 <table style="border-collapse: collapse;">
   <thead>
     <tr>
