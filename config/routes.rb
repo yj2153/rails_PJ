@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/' => "boards#index"
+  devise_for :users
   resources :boards do 
     resources :comments
   end
