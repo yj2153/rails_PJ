@@ -25,12 +25,18 @@
 <table style="border-collapse: collapse;">
   <% @board.comments.each_with_index do |comment, index| %>
     <tr>
+      <td style="border-bottom: 1px solid">
+           <h3><%= comment.user.email %></h3>
+        </td>
       <td style="border-bottom: 1px solid;">
-        <span style="font-weight:bold"><%= index + 1 %> .</span>
         <%= comment.comment %>
       </td>
       <td style="border-bottom: 1px solid">
-        <%= link_to 'Destroy', [comment.board, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+          
+	    <% if can? :destroy, comment %>
+         <%= link_to 'Destroy', [@board, comment], method: :delete, data: { confirm: 'Are you sure?' } %>   
+	    <% end %>
+    
         </td>
     </tr>
   <% end %>

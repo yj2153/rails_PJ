@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :borads, dependent: :destroy
+  has_many :comments, dependent: :destroy
   after_create :assign_default_role
   rolify
   def assign_default_role

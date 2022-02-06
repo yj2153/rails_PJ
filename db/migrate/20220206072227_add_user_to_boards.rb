@@ -1,4 +1,4 @@
-class AddUserToBoard < ActiveRecord::Migration[5.0]
+class AddUserToBoards < ActiveRecord::Migration[5.0]
   def change
     add_reference :boards, :user, foreign_key: true
   end

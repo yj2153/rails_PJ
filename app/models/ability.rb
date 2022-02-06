@@ -14,6 +14,8 @@ class Ability
   		can :read, :all
   		can [:index, :show, :new, :create], Board
   		can [:edit, :update, :destroy], Board, user_id: user.id
+  		can [:create], Comment
+  		can [:destroy], Comment, user_id: user.id
   	# ゲスト
   	else
   		can :read, :all #:read - listの観覧 許可
