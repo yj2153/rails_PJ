@@ -10,8 +10,13 @@
   <%= @board.content %>
 </p>
 
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Destroy', @board, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% if can? :update, @board %>
+       	<td><%= link_to 'Edit', edit_board_path(@board) %></td>
+	<% end %>
+	<% if can? :destroy, @board %>
+       	<td><%= link_to 'Destroy', @board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+	
 <%= link_to 'Back', boards_path %>
 
 <br>

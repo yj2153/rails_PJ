@@ -7,6 +7,9 @@ gem 'rails', '~> 5.0.0'
 gem 'devise'
 #kaminari page move
 gem 'kaminari'
+#cancancan
+gem 'cancancan'
+gem 'rolify'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.0'
 # Use Puma as the app server

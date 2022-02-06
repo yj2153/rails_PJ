@@ -15,7 +15,7 @@
     <tr>
       <th>Title</th>
       <th>Content</th>
-      <th colspan="3"></th>
+      <th>user</th>
     </tr>
   </thead>
 
@@ -30,6 +30,9 @@
           <%= board.title %>
           <% end %>
         </td>
+        <td style="border-bottom: 1px solid">
+           <%= board.user.email %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +42,7 @@
 
 <%= paginate @boards %>
 
-<%= link_to 'New Board', new_board_path %>
+<% if user_signed_in? %>
+  <!--loginのみ登録可能-->
+  <%= link_to 'New Board', new_board_path %>
+<% end %>
