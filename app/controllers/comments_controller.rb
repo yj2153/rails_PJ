@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
+  
     def create
        @borad = Board.find(params[:board_id]) 
        @comment = @borad.comments.create(comment_params)
+       @comment.user_id  = current_user.id #or whatever is you session name
+       @comment.save
        redirect_to board_path(@borad)
     end
     
@@ -9,6 +12,7 @@ class CommentsController < ApplicationController
     def destroy
         @borad = Board.find(params[:board_id]) 
         @comment = @borad.comments.find(params[:id])
+        authorize! :read, @comment
         @comment.destroy
         redirect_to board_path(@borad)
     end
