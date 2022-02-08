@@ -1,0 +1,6 @@
+## config/application.yml
+
+AWS_ACCESS_ID: "xxxxxxxxxx"
+AWS_ACCESS_SECRET_KEY: "yyyyyyyyyyy"
+AWS_REGION: "ap-northeast-2"
+AWS_S3_END_POINT: "https://s3-ap-northeast-2.amazonaws.com"

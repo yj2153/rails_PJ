@@ -10,6 +10,11 @@ gem 'kaminari'
 #cancancan
 gem 'cancancan'
 gem 'rolify'
+## AWS連動およびイメージアップロード
+gem 'fog', '~> 1.41.0'
+gem 'carrierwave' 
+## 環境変数設定
+gem 'figaro'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.0'
 # Use Puma as the app server

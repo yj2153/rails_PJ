@@ -20,6 +20,10 @@
     <%= f.label :content %>
     <%= f.text_field :content %>
   </div>
+  
+  <div class="field">
+     <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

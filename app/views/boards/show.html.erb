@@ -10,6 +10,10 @@
   <%= @board.content %>
 </p>
 
+<p>
+  <img src="<%= @board.image %>">
+</p>
+
 <% if can? :update, @board %>
        	<td><%= link_to 'Edit', edit_board_path(@board) %></td>
 	<% end %>
