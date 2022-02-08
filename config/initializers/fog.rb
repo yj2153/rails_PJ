@@ -7,8 +7,7 @@ CarrierWave.configure do |config|
         region:                "#{ENV["AWS_REGION"]}",             # asia-korea server 名称
         endpoint:              "#{ENV["AWS_S3_END_POINT"]}" # asia-korea server
     }
-    #config.fog_directory  = 'bucket name'                          # required
-    config.fog_directory  = 'rails-project-1-oyj2153'                          # required
+    config.fog_directory  = 'XXXXXXXXXXX'                          # required
     config.fog_public     = true                                        # optional, defaults to true
     config.fog_attributes = { } # optional, defaults to {}
     
